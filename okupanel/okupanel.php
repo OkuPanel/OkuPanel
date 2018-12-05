@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: OkuPanel
-Plugin URI: https://ingobernable.net
-Description: A panel that displays live events from a Google Calendar or .ics files. By Ingoberlab.
+Plugin URI: https://wordpress.org/plugins/OkuPanel/
+Description: A panel that displays live events from a Google Calendar or .ics files. A cDb project.
 Version: 6.10
-Author: Ingoberlab@Ingobernable
-Author URI: https://hacklab.ingobernable.net
+Author: cDb
+Author URI: https://github.com/OkuTeam/
 License: GPLv2 or later
 Text Domain: okupanel
 */

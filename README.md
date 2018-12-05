@@ -1,95 +1,71 @@
-=== OkuPanel ===
-Contributors: moon155
-Tags: kiosk, calendar, events, ics, squat
-Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: trunk
-Requires PHP: 5.2.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# OkuPanel (WordPress plugin)
 
-A panel that displays live events from one or several calendar files (.ics). A cDb project.
+A panel that displays live events from a Google Calendar or .ics files. A cDb project.
 
+## Features 
 
-== Features ==
-
-- Display events from one from one or several online calendars (.ics or Google Calendar)
-- Event changes are automatically updated on the client via periodic ajax calls.
-- Autodetect specific events and show them in the sidebar.
-- Display a popup for every event, with full address and description.
-- Fully responsive frontend.
-- Auto-scrolling events in fullscreen mode (for days ahead).
-- Auto-scrolling bottom bar that can be updated without reloading the page.
-- Events can be included in any normal wordpress page, via the [okupanel] shortcode.
-- Events subscription/synchronization via ICS output.
-- Graphical timeline of all events via the [okupanel_timeline] shortcode.
-- Automatic management of cafeteria turns via an etherpad.
-- Virtual nodes to show different centers in one common URL/screen.
-- Federation capabilities to show events from many okupanels at once via a switch button.
-- Feature special set of events via autodetected custom hashtags.
-- Available in English and Spanish. Can be translated to any language through .po files.
-- Can be set as the root page of the wordpress.
-- Coming soon: integrate events with OpenStreetMaps
+* Display events from one Google Calendar or from one or several .ics
+* Event changes are automatically updated on the client via periodic ajax calls.
+* Autodetect specific events and show them in the sidebar.
+* Display a popup for every event, with full address and description.
+* Fully responsive frontend.
+* Auto-scrolling events in fullscreen mode.
+* Auto-scrolling bottom bar that can be updated without reloading the page.
+* Events can be included in any normal wordpress page, via shortcode.
+* Available in English and Spanish. Can be translated to any language through .po files.
 
 See [a live OkuPanel](https://ingobernable.net/okupanel/)!
-Or [this other one](http://evarganzuela.org/eva/okupanel).
 
-== Installation ==
+![Desktop version of an OkuPanel](/screenshots/screenshot-1.png?raw=true "Desktop version of our OkuPanel")
+![An event popup from the web version](/screenshots/screenshot-2.png?raw=true "An event popup from the web version")
+![A photo from a real OkuPanel entrance screen](/screenshots/screenshot-3.jpg?raw=true "A photo from our real OkuPanel entrance screen")
+![Mobile version of an OkuPanel](/screenshots/screenshot-4.png?raw=true "Mobile version of our OkuPanel")
 
-**Requirements for a physical screen:**
+## Installation 
 
-- A [Raspberry Pi3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/), an Orange Pi or any computer you can dedicate to the task, plug to your screen and connect to the internet. 
-- A [good charger](https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/) if you opted for a Raspberry or similar.
-- A 8GB+ MicroSD card (better class 10, though it might work with a class 4), if you opted for a Raspberry or similar.
-- A nice screen with an HDMI input + an HDMI cable (if you opted for a Raspberry or similar, otherwise just make sure you can connect the screen with the computer)
+**Requirements:**
 
-- Optional: a fan for the Pi.
-- Extra: you'll probably love 3D-printing your own custom bio-degradable, ecological, cheap Pi case! If so, follow the dedicated part of [our previous kiosk tutorial](https://wiki.ingobernable.net/doku.php?id=pantalla_entrada#imprimir_en_3d_una_cajita_si_la_que_tenemos_esta_un_poco_rota) (Spanish only).
+* A working [WordPress](https://wordpress.org) website
+* A [Raspberry Pi3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or similar. 
+* A [good charger](https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/) for the Pi (though it might work with a cheap one).
+* A 8GB+ MicroSD card (better class 10, though it might work with a class 4). 
+* A nice screen with an HDMI input.
+* An HDMI cable.
+
+* Optional: a fan for the Pi.
+* Extra: you'll probably love 3D-printing your own custom bio-degradable, ecological, cheap Pi case! If so, follow the dedicated part of [our previous kiosk tutorial](https://wiki.ingobernable.net/doku.php?id=pantalla_entrada#imprimir_en_3d_una_cajita_si_la_que_tenemos_esta_un_poco_rota) (Spanish only).
 
 **Plugin installation:**
 
-- Copy the `okupanel` folder to your server's `wp-content/plugins` folder.
-- Enable the OkuPanel plugin via the `Plugins` tab.
-- Go to `Settings > OkuPanel` and follow the instructions.
+* Copy the `okupanel` folder to your server's `wp-content/plugins` folder.
+* Enable the OkuPanel plugin via the `Plugins` tab.
+* Go to `Settings > OkuPanel` and follow the instructions.
 
 **Kiosk configuration:**
 
-- Write down the fullscreen URL given in the previous step (it ends up in `?fullscreen=1&moving=1`).
-
-- [Download FullpageOS](https://github.com/guysoft/FullPageOS) and extract it somewhere on your machine (with `unzip -u thefile` for example).
-
-- Plug your MicroSD card to your computer and find its master path (for example with `sudo gparted`). Please make sure you use the right path, and not your HDD path! Otherwise you could wipe out all your local disk.
-
-- Burn the extracted .img on the MicroSD card (for example with `dd if=/path/to/the/image.img of=/dev/microsd_id`).
-
-- Once done, eject and re-insert the MicroSD card in order to mount it to your computer.
-
+* Write down the fullscreen URL given in the previous step (it ends up in `?fullscreen=1&moving=1`).
+* [Download FullpageOS](https://github.com/guysoft/FullPageOS) and extract it somewhere on your machine (with `unzip -u thefile` for example).
+* Plug your MicroSD card to your computer and find its master path (for example with `sudo gparted`). Please make sure you use the right path, and not your HDD path! Otherwise you could wipe out all your local disk.
+* Burn the extracted .img on the MicroSD card (for example with `dd if=/path/to/the/image.img of=/dev/microsd_id`).
+* Once done, eject and re-insert the MicroSD card in order to mount it to your computer.
 * On the "boot" partition of the MicroSD card, edit `fullpageos-network.txt` and put your network settings.
 * Edit `fullpageos.txt` and leave only your OkuPanel's fullscreen URL.
-* Edit `fullpagedashboard.txt` and leave only your OkuPanel's fullscreen URL there again.
-
+* Edit `fullpageos-home.txt` and leave only your OkuPanel's fullscreen URL there again.
 * Eject the MicroSD card, insert it into your Pi, plug the Pi to a screen, and boot it.
-
 * In a couple of minutes you should see the Pi automatically start Chromium in fullscreen mode and display your OkuPanel page ;)
-
 * Additionally, you may log into your Pi via SSH (it may be located at fullpageos.local, default username is "pi", default password is "raspberry") and change the password using the passwd command. 
 
-OkuPanel, by cDb.
 
-
-== Frequently Asked Questions ==
+## Frequently Asked Questions 
 
 **My panel is not reflecting the changes I make to the events, what should I do?**
-- OkuPanel retrieves the events every 5 minutes, so it is normal if you don't see your changes immediately, just wait 5 minutes in fullscreen mode, or 15 in client mode (without ?fullscreen=1..). If you need to force the panel to reflect the changes you just made (due to a mistake, or just because you're testing), you can ever add ?update=1 to your OkuPanel URL while logged in, this will force the events to be retrieved again.
+- OkuPanel retrieves the events every 5 minutes, so it is normal if you don't see your changes immediately, just wait 5 minutes in fullscreen mode, or 15 in client mode (without ?fullscreen=1..). If you need to force the panel to reflect the changes you just made (due to a mistake, or just because you're testing), you can always add ?update=1 to your OkuPanel URL while logged in, this will force the events to be retrieved again.
 
 **Do you plan to add other languages?**
 - No, but if you send us translation files (.po), we can add them to the plugin's available languages.
 
 **Do you offer installation support?**
-- Not really.. but you're very welcome to ask us anything at okupanel@riseup.net
-
-**Do you offer software support?**
-- Not really either.. but if you found a nice bug, we'll be pleased to fix it! Please use [our Github repository](https://github.com/OkuTeam/OkuPanel/issues) for all support tickets and suggestions.
+- Not really.. but you're very welcome to visit us with your Pi and MicroSD card at [La Ingobernable](https://ingobernable.net/) (address below), we'll do our best to solve your troubles in the moment ;)
 
 **Do you have a donate link?**
 - No, but if you really think we deserve your donation, you can always visit us (see address below) or contact us at luna155 at riseup dot net.
@@ -268,17 +244,10 @@ jQuery(document).ready(function(){
 
 Autodetected events:
 ~~~~
-'#as[ea]mblea\s*general#ius Asamblea General
-'#s[áa]bado\s*rojo#ius Sábado Rojo
+#as[ea]mblea\s*general#ius Asamblea General
+#s[áa]bado\s*rojo#ius Sábado Rojo
 ~~~~
 
 See [a live OkuPanel](https://ingobernable.net/okupanel/)!
 
-OkuPanel, a project inited at the Ingoberlab, now maintained by the OkuTeam @ cDb.
-
-
-== Screenshots ==
-Desktop version of an OkuPanel
-An event popup from the web version
-A photo from a real OkuPanel entrance screen
-Mobile version of an OkuPanel
+OkuPanel, inited at the Ingoberlab, maintained by the OkuTeam at cDb.

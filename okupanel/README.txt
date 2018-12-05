@@ -8,7 +8,7 @@ Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A panel that displays live events from one or several calendar files (.ics). By Ingoberlab.
+A panel that displays live events from one or several calendar files (.ics). A cDb project.
 
 
 == Features ==
@@ -31,12 +31,8 @@ A panel that displays live events from one or several calendar files (.ics). By 
 - Can be set as the root page of the wordpress.
 - Coming soon: integrate events with OpenStreetMaps
 
-See [our own OkuPanel](https://ingobernable.net/okupanel/) online!
-Or [our hacklab special one](https://hacklab.ingobernable.net/okupanel/), or [this one from another center](http://evarganzuela.org/eva/okupanel).
-
-OkuPanel, by [Ingoberlab](https://hacklab.ingobernable.net/)@[Ingobernable](https://ingobernable.net/),
-Calle Gobernador 39, Madrid, Spain
-
+See [a live OkuPanel](https://ingobernable.net/okupanel/)!
+Or [this other one](http://evarganzuela.org/eva/okupanel).
 
 == Installation ==
 
@@ -78,8 +74,7 @@ Calle Gobernador 39, Madrid, Spain
 
 * Additionally, you may log into your Pi via SSH (it may be located at fullpageos.local, default username is "pi", default password is "raspberry") and change the password using the passwd command. 
 
-OkuPanel, by [Ingoberlab](https://hacklab.ingobernable.net/)@[Ingobernable](https://ingobernable.net/),
-Calle Gobernador 39, Madrid, Spain
+OkuPanel, by cDb.
 
 
 == Frequently Asked Questions ==
@@ -91,16 +86,16 @@ Calle Gobernador 39, Madrid, Spain
 - No, but if you send us translation files (.po), we can add them to the plugin's available languages.
 
 **Do you offer installation support?**
-- Not really.. but you're very welcome to visit us with your Pi and MicroSD card at [La Ingobernable](https://ingobernable.net/) (address below), we'll do our best to solve your troubles in the moment ;)
+- Not really.. but you're very welcome to ask us anything at okupanel@riseup.net
 
 **Do you offer software support?**
-- Not really either.. but if you found a nice bug, we'll be pleased to fix it! Please use [our Github repository](https://github.com/Ingobernable/OkuPanel/issues) for all support tickets and suggestions.
+- Not really either.. but if you found a nice bug, we'll be pleased to fix it! Please use [our Github repository](https://github.com/OkuTeam/OkuPanel/issues) for all support tickets and suggestions.
 
 **Do you have a donate link?**
 - No, but if you really think we deserve your donation, you can always visit us (see address below) or contact us at luna155 at riseup dot net.
 
 **Can you give us sample values for the config fields?**
-- Sure. Here is our current configuration:
+- Sure. Here is an example of configuration:
 
 Panel title: 
 ~~~~
@@ -277,14 +272,13 @@ Autodetected events:
 '#s[áa]bado\s*rojo#ius Sábado Rojo
 ~~~~
 
-See [our own OkuPanel](https://ingobernable.net/okupanel/) online!
+See [a live OkuPanel](https://ingobernable.net/okupanel/)!
 
-OkuPanel, by [Ingoberlab](https://hacklab.ingobernable.net/)@[Ingobernable](https://ingobernable.net/),
-Calle Gobernador 39, Madrid, Spain
+OkuPanel, a project inited at the Ingoberlab, now maintained by the OkuTeam @ cDb.
 
 
 == Screenshots ==
-Desktop version of our OkuPanel
+Desktop version of an OkuPanel
 An event popup from the web version
-A photo from our real OkuPanel entrance screen
-Mobile version of our OkuPanel
+A photo from a real OkuPanel entrance screen
+Mobile version of an OkuPanel
